@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Gigster.Migrations
 {
-    public partial class initialmodel : Migration
+    public partial class OverrideConventions : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,7 +51,7 @@ namespace Gigster.Migrations
                 columns: table => new
                 {
                     Id = table.Column<byte>(type: "tinyint", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -170,10 +170,10 @@ namespace Gigster.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ArtistId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ArtistId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Venue = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GenreId = table.Column<byte>(type: "tinyint", nullable: true)
+                    Venue = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    GenreId = table.Column<byte>(type: "tinyint", nullable: false)
                 },
                 constraints: table =>
                 {

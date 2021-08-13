@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gigster.Migrations
 {
     [DbContext(typeof(GigsterDbContext))]
-    [Migration("20210813142340_OverrideConventions")]
+    [Migration("20210813143231_OverrideConventions")]
     partial class OverrideConventions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
